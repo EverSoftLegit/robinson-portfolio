@@ -1,217 +1,178 @@
 /* Base Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   }
-  
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
   }
-  
   /* Accent Theme */
   :root {
-    --primary-accent: #008B8B; /* Deep Dark Cyan */
-    --white: #ffffff;
-    --black: #000000;
+  --primary-accent: #008B8B; /* Deep Dark Cyan */
+  --white: #ffffff;
+  --black: #000000;
+  --text-color: #333;
+  --border-color: #ccc;
+  --link-color: #008B8B;
+  --link-hover: #005f5f;
+  --link-dark: #00dddd;
+  --link-dark-hover: #66ffff;
   }
-  
+  /* Link Styling */
+  a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  }
+  a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  }
+  body.dark-mode a {
+  color: var(--link-dark);
+  }
+  body.dark-mode a:hover {
+  color: var(--link-dark-hover);
+  }
   /* Dark Mode */
   body.dark-mode {
-    background-color: var(--black);
-    color: var(--white);
+  background-color: var(--black);
+  color: var(--white);
   }
-  
   body.dark-mode nav {
-    background-color: #111;
+  background-color: #111;
   }
-  
-  body.dark-mode a,
-  body.dark-mode h2 {
-    color: var(--white);
-  }
-  
   /* Navbar */
   nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--primary-accent);
-    padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-accent);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   }
-  
   .logo img {
-    height: 50px;
-    background-color: #ffffff;
-    padding: 6px 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  height: 50px;
+  background-color: var(--white);
+  padding: 6px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   }
-  
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex: 1;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex: 1;
   }
-  
   .nav-links li a {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: bold;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  transition: color 0.3s;
   }
-  
   .nav-links li a:hover {
-    color: #ccc;
+  color: #ccc;
   }
-  
   .toggle-dark-mode {
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--white);
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--white);
   }
-  
   /* Hamburger (Mobile) */
   .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
   }
-  
   .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--white);
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
   }
-  
   /* Header */
   .header-banner {
-    background-color: var(--primary-accent);
-    color: var(--white);
-    padding: 60px 20px;
-    text-align: center;
+  background-color: var(--primary-accent);
+  color: var(--white);
+  padding: 60px 20px;
+  text-align: center;
   }
-  
   /* Section Styling */
   .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    animation: fadeIn 1s ease-in-out;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: fadeIn 1s ease-in-out;
   }
-  
-  /* Contact Section */
-  .contact-form {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--white);
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 300px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .contact-form button {
-    background-color: var(--primary-accent);
-    color: var(--white);
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .contact-form button:hover {
-    background-color: #006f6f;
-  }
-  
   /* Responsive Design */
   @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: var(--primary-accent);
-      position: absolute;
-      top: 70px;
-      right: 0;
-      width: 200px;
-      padding: 20px;
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .hamburger {
-      display: flex;
-    }
-  
-    .toggle-dark-mode {
-      position: absolute;
-      right: 20px;
-    }
+  .nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: var(--primary-accent);
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  padding: 20px;
   }
-  
+  .nav-links.show {
+  display: flex;
+  }
+  .hamburger {
+  display: flex;
+  }
+  .toggle-dark-mode {
+  position: absolute;
+  right: 20px;
+  }
+  }
   /* Animations */
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+  opacity: 0;
+  transform: translateY(20px);
   }
-  
+  to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  }
   html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
   }
-  
   /* Toast Notification */
   .toast {
-    visibility: hidden;
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: var(--primary-accent);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    opacity: 0;
-    transition: opacity 0.5s, visibility 0.5s;
-    z-index: 1000;
+  visibility: hidden;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: var(--primary-accent);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+  z-index: 1000;
   }
-  
   .toast.show {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
   }
-
+  /* Footer */
   .footer {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    color: var(--text-color);
-    border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
   }
-  
